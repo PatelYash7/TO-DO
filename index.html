@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="output.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+</head>
+
+<body class="bg-[#e5e5e5] h-screen flex justify-center items-center">
+    <div class="app w-[300px] h-[450px] border-4 rounded-md p-4 border-[#abcea1] bg-[#fff] overflow-y-auto no-scrollbar">
+        <h4 class="mb-3">TO-DO App</h4>
+        <div class="bg-[#abcea159] flex items-center justify-between px-2 py-1 cursor-pointer rounded" id="addNew"
+            data-modal-target="form1" data-modal-toggle="form1">
+            <span>Add New Task</span>
+            <i class="fas fa-plus bg-[#abcea1] p-1 rounded"></i>
+        </div>
+
+
+        <h5 class="text-center my-3">Tasks</h5>
+        <!-- Main modal -->
+        <form Form1 id="form1" tabindex="-1" aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <button id="add1" type="button"
+                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg
+                         text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="form1">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                    <div class="px-6 py-6 lg:px-8">
+                        <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Add New Task</h3>
+                        <!-- Task  -->
+                        <div>
+                            <label for="task_title"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Task
+                                Title</label>
+                            <input textInput type="text" name="task_title" id="textInput"
+                                class="form-control bg-[#abcea159] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#abcea159] focus:border-[#abcea1]
+                                    block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                placeholder="Enter your task here">
+                        </div>
+                        <div id="msg" class="text-red-700">
+                        </div>
+                        <!-- Date  -->
+                        <div>
+                            <label for="due_date"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Due
+                                Date</label>
+                            <input dateInput
+                                class="bg-[#abcea159] border border-[#abcea1] text-gray-900 text-sm rounded-lg focus:ring-[#abcea159] focus:border-[#abcea1]
+                                                    block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                type="date" name="due_date" id="dateInput" >
+                                <div id="msg1" class="text-red-700"></div>
+                        </div>
+                        <!-- Description -->
+                        <div>
+                            <label for="description"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                Description
+                            </label>
+                            <textarea
+                                class="border border-[#abcea1] text-gray-900 text-sm rounded-lg focus:ring-[#abcea159] focus:border-[#abcea1]"
+                                name="description" id="textArea" cols="45" rows="5" textArea></textarea>
+                        </div>
+                        <!-- ADD button -->
+                        <div class="flex justify-center">
+                            <button id="add" type="submit" class="bg-blue-800 w-25 text-white 
+                                hover:bg-blue-800 focus:ring-4 focus:outline-none
+                                focus:ring-blue-300 font-medium rounded-lg text-sm px-5
+                                py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700
+                                dark:focus:ring-blue-800">
+                                Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="grid gap-4" id="task" task>
+            <!-- Task 1 -->
+            
+            <!-- task-2 -->
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
